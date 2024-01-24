@@ -43,4 +43,22 @@
 # == YOUR CODE ==
 
 class PasswordManager():
-    pass
+    def __init__(self):
+        dict = {}
+        self.dict = dict
+        return 
+    
+    def add(self, service, password):
+        if len(password) > 7:
+            for x in password:
+                if x == '!' or x == '@' or x == '$' or x == '%' or x == '&':
+                    self.dict[service] = password
+
+    def get_for_service(self, service):
+        if service in self.dict.keys():
+            return self.dict[service]
+        else:
+            return None
+        
+    def list_services(self):
+        return self.dict.keys()
